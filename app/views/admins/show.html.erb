@@ -1,0 +1,41 @@
+
+Its admin!!!
+
+<%= javascript_include_tag %>
+
+
+
+<script>
+//Get the context of the canvas element we want to select
+$(function() {
+$("#show").click(function() {
+var ctx = document.getElementById("myChart").getContext("2d");
+var data = [
+        {
+                value: 30,
+                color:"#F38630"
+        },
+        {
+                value : 50,
+                color : "#E0E4CC"
+        },
+        {
+                value : 10,
+                color : "#69D2E7"
+        }                       
+];
+new Chart(ctx).Doughnut(data);
+document.getElementById("canvasdiv").style.display = "block";
+});
+});
+</script>
+
+
+
+  <button type="button" id= "show">Show Chart</button>
+<div id="canvasdiv" style="display:none">
+<canvas id="myChart" width="400" height="400"></canvas>
+</div>
+
+user name is 
+<%= current_user.email %>
